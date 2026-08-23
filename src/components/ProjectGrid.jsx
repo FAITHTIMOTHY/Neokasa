@@ -36,7 +36,7 @@ export default function ProjectGrid({ onSelectProject }) {
       {/* =========================================================================
           SHEET 02: "CONTENT" VERTICAL PANORAMIC STRIP INDEX (Reference Image 2)
           ========================================================================= */}
-      <div style={{ marginBottom: '6rem' }}>
+      <div style={{ marginBottom: '3.5rem' }}>
         {/* Folio Bar */}
         <div className="arch-folio-bar">
           <div>NEO KASA</div>
@@ -52,7 +52,7 @@ export default function ProjectGrid({ onSelectProject }) {
           color: 'var(--accent-gold)',
           textTransform: 'uppercase',
           fontWeight: '700',
-          marginBottom: '1.25rem'
+          marginBottom: '1rem'
         }}>
           // PROJECT INDEX & DIRECTORY
         </div>
@@ -99,7 +99,7 @@ export default function ProjectGrid({ onSelectProject }) {
         </div>
 
         {/* Giant Cropped "CONTENT" Watermark (Reference Image 2) */}
-        <div className="arch-watermark-title" style={{ marginTop: '1rem' }}>
+        <div className="arch-watermark-title">
           CONTENT
         </div>
       </div>
@@ -110,8 +110,8 @@ export default function ProjectGrid({ onSelectProject }) {
       <div style={{
         background: 'var(--bg-card)',
         border: '1px solid var(--border-strong)',
-        padding: '1rem 1.25rem',
-        marginBottom: '4rem',
+        padding: '0.85rem 1.25rem',
+        marginBottom: '2.5rem',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -173,7 +173,7 @@ export default function ProjectGrid({ onSelectProject }) {
       {/* =========================================================================
           SHEETS 03 - 07: EDITORIAL PROJECT CASE STUDY SHEETS (Reference Image 3)
           ========================================================================= */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem' }}>
         {filteredProjects.map((project, pIdx) => {
           const sheetNumber = String(pIdx + 3).padStart(2, '0');
           const watermarkNumber = String(pIdx + 1).padStart(2, '0');
@@ -339,7 +339,7 @@ export default function ProjectGrid({ onSelectProject }) {
           SHEET 08: "MISCELLANEOUS: SKETCHES & STUDIES" MOSAIC (Reference Image 1)
           ========================================================================= */}
       <div id="sketches" style={{
-        marginTop: '6rem',
+        marginTop: '3.5rem',
         borderTop: '1px solid var(--border-strong)',
         paddingTop: '2rem'
       }}>

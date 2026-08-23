@@ -49,7 +49,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" style={{
-      padding: '5rem 1.5rem 2rem 1.5rem',
+      padding: '3rem 1.5rem 1rem 1.5rem',
       maxWidth: '1400px',
       margin: '0 auto',
       position: 'relative'

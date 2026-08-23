@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 /**
  * ScrollReveal Component
- * Fades children into view when scrolled in, and fades out when scrolled out of view.
+ * Smoothly reveals elements on scroll with full opacity so content is never faint.
  */
 export default function ScrollReveal({ 
   children, 
@@ -10,21 +10,21 @@ export default function ScrollReveal({
   style = {}, 
   delay = 0, 
   variant = 'fade-up', // 'fade-up' | 'scale' | 'fade-in'
-  threshold = 0.1,
-  rootMargin = '-20px 0px -20px 0px'
+  threshold = 0.05
 }) {
-  const [isVisible, setIsVisible] = useState(false);
+  const [hasEntered, setHasEntered] = useState(false);
   const domRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Toggle visibility so it fades IN when entering and OUT when leaving
-        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setHasEntered(true);
+        }
       },
       {
         threshold,
-        rootMargin
+        rootMargin: '60px 0px 60px 0px'
       }
     );
 
@@ -36,7 +36,7 @@ export default function ScrollReveal({
     return () => {
       if (currentElem) observer.unobserve(currentElem);
     };
-  }, [threshold, rootMargin]);
+  }, [threshold]);
 
   let variantClass = 'reveal-fade-up';
   if (variant === 'scale') variantClass = 'reveal-scale';
@@ -45,7 +45,7 @@ export default function ScrollReveal({
   return (
     <div
       ref={domRef}
-      className={`scroll-reveal-container ${variantClass} ${isVisible ? 'is-visible' : 'is-hidden'} ${className}`}
+      className={`scroll-reveal-container ${variantClass} ${hasEntered ? 'is-visible' : 'is-entering'} ${className}`}
       style={{
         ...style,
         transitionDelay: `${delay}ms`
@@ -55,3 +55,4 @@ export default function ScrollReveal({
     </div>
   );
 }
+

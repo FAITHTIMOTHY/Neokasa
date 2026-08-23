@@ -43,7 +43,7 @@ export default function AboutFounder({ onOpenContact }) {
 
   return (
     <section id="founder" style={{
-      padding: '5rem 1.5rem 2rem 1.5rem',
+      padding: '3rem 1.5rem 1rem 1.5rem',
       maxWidth: '1400px',
       margin: '0 auto',
       position: 'relative'
