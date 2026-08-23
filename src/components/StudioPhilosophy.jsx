@@ -4,19 +4,34 @@ import { Award, Sparkles, CheckCircle2, Home, Cpu, Layers } from 'lucide-react';
 export default function StudioPhilosophy() {
   return (
     <section id="philosophy" style={{
-      padding: '5rem 1.5rem',
+      padding: '5rem 1.5rem 2rem 1.5rem',
       maxWidth: '1400px',
       margin: '0 auto',
-      borderTop: '1px solid var(--border-strong)'
+      position: 'relative'
     }}>
-      {/* Header */}
-      <div style={{ marginBottom: '3rem' }}>
-        <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-          // BRAND NARRATIVE & IDENTITY
-        </div>
-        <h2 style={{ textTransform: 'uppercase', marginTop: '0.2rem', color: 'var(--text-heading)' }}>
-          About NEO KASA
+      {/* Top Folio Bar */}
+      <div className="arch-folio-bar">
+        <div>NEO KASA</div>
+        <div className="arch-folio-center">NEO KASA | Brand Manifesto 2025</div>
+        <div className="arch-folio-page">09</div>
+      </div>
+
+      {/* Drafting L-Bracket Header */}
+      <div className="arch-drafting-bracket">
+        <h2 style={{
+          fontFamily: 'var(--font-display)',
+          fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
+          fontWeight: '800',
+          color: 'var(--text-heading)',
+          textTransform: 'uppercase',
+          margin: 0
+        }}>
+          About NEO KASA & Philosophy
         </h2>
+        <div className="arch-drafting-baseline" />
+        <p style={{ fontSize: '1.02rem', color: 'var(--text-secondary)', maxWidth: '850px', lineHeight: 1.75 }}>
+          Redefining what modern living should look like through thoughtful architecture, sustainable craft, and meaningful spatial character that endures.
+        </p>
       </div>
 
       {/* Origin of Name: NEO + KASA Highlight Cards */}
@@ -28,7 +43,7 @@ export default function StudioPhilosophy() {
       }} className="mobile-grid-1">
         
         {/* NEO Card */}
-        <div className="card-architectural" style={{ padding: '2.25rem', borderRadius: '2px', position: 'relative' }}>
+        <div className="arch-corner-card" style={{ padding: '2.25rem', borderRadius: '2px', position: 'relative' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem', color: 'var(--accent-gold)' }}>
             <Cpu size={22} />
             <span style={{ fontSize: '0.85rem', fontFamily: 'var(--font-mono)', fontWeight: '700', letterSpacing: '0.15em' }}>
@@ -44,7 +59,7 @@ export default function StudioPhilosophy() {
         </div>
 
         {/* KASA Card */}
-        <div className="card-architectural" style={{ padding: '2.25rem', borderRadius: '2px', position: 'relative' }}>
+        <div className="arch-corner-card" style={{ padding: '2.25rem', borderRadius: '2px', position: 'relative' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem', color: 'var(--accent-gold)' }}>
             <Home size={22} />
             <span style={{ fontSize: '0.85rem', fontFamily: 'var(--font-mono)', fontWeight: '700', letterSpacing: '0.15em' }}>
@@ -66,13 +81,14 @@ export default function StudioPhilosophy() {
         background: 'var(--bg-card)',
         border: '1px solid var(--border-strong)',
         padding: '3rem 2.5rem',
-        borderRadius: '2px'
+        borderRadius: '2px',
+        position: 'relative'
       }}>
         <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--accent-gold)', letterSpacing: '0.15em', marginBottom: '0.75rem' }}>
           // STATEMENT OF IDENTITY
         </div>
         
-        <h3 style={{ fontSize: '1.6rem', color: 'var(--text-heading)', marginBottom: '1.25rem', lineHeight: 1.3 }}>
+        <h3 style={{ fontSize: '1.6rem', color: 'var(--text-heading)', marginBottom: '1.25rem', lineHeight: 1.3, fontFamily: 'var(--font-display)' }}>
           "NEO KASA translates to 'Modern Home'—a brand dedicated to redefining what modern living should look like."
         </h3>
 
@@ -106,6 +122,12 @@ export default function StudioPhilosophy() {
           </div>
         </div>
       </div>
+
+      {/* Giant Cropped "STUDIO" Watermark */}
+      <div className="arch-watermark-title" style={{ marginTop: '1rem' }}>
+        STUDIO
+      </div>
     </section>
   );
 }
+

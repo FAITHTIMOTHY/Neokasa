@@ -407,3 +407,284 @@ input[type=range]::-webkit-slider-thumb {
   }
 }
 
+/* ==========================================================================
+   Editorial Monograph & Architectural Sheet Layout System
+   ========================================================================== */
+
+/* Top Folio Bar across Editorial Sheets */
+.arch-folio-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-strong);
+  padding-bottom: 0.65rem;
+  margin-bottom: 2.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.arch-folio-center {
+  flex: 1;
+  text-align: center;
+  letter-spacing: 0.2em;
+  color: var(--text-secondary);
+}
+
+.arch-folio-page {
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: 0.1em;
+}
+
+/* Drafting L-Bracket Header Frame */
+.arch-drafting-bracket {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.arch-drafting-bracket::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -8px;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--border-strong);
+}
+
+.arch-drafting-bracket::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -8px;
+  width: 50px;
+  height: 2px;
+  background-color: var(--border-strong);
+}
+
+.arch-drafting-baseline {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-subtle);
+  margin: 1.25rem 0 1.5rem 0;
+}
+
+/* Giant Bottom-Right Watermark Cutout Typography */
+.arch-watermark-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  line-height: 0.85;
+  color: var(--text-heading);
+  opacity: 0.14;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  user-select: none;
+  pointer-events: none;
+  text-align: right;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.arch-watermark-number {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.8;
+  color: var(--text-heading);
+  opacity: 0.15;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Vertical Ribbon / Panoramic Photo Strips (Content Index Layout) */
+.arch-strips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.arch-strip-item {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arch-strip-item:hover {
+  transform: translateY(-6px);
+}
+
+.arch-strip-frame {
+  position: relative;
+  height: 380px;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-elevation);
+}
+
+.arch-strip-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.arch-strip-item:hover .arch-strip-frame img {
+  transform: scale(1.08);
+}
+
+.arch-strip-num {
+  position: absolute;
+  bottom: -0.15rem;
+  right: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--color-warm-white);
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  user-select: none;
+}
+
+.arch-strip-title {
+  margin-top: 0.85rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-heading);
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+
+/* Architectural Corner Tick Markers '+' / Cross Framing */
+.arch-corner-card {
+  position: relative;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+}
+
+.arch-corner-card::before,
+.arch-corner-card::after {
+  content: '+';
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--accent-gold);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.arch-corner-card::before {
+  top: -7px;
+  left: -5px;
+}
+
+.arch-corner-card::after {
+  bottom: -7px;
+  right: -5px;
+}
+
+/* Fullscreen Minimalist Editorial Overlay Navigation */
+.arch-fullscreen-nav {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.arch-fullscreen-nav-close {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-heading);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.arch-fullscreen-nav-close:hover {
+  transform: scale(1.15) rotate(90deg);
+  color: var(--accent-gold);
+}
+
+.arch-nav-stagger-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+.arch-nav-stagger-item {
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--text-heading);
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.arch-nav-stagger-item:hover {
+  color: var(--accent-gold);
+  transform: translateX(8px);
+}
+
+.arch-nav-stagger-item.align-left {
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+.arch-nav-stagger-item.align-right {
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.arch-nav-stagger-index {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.arch-nav-stagger-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4.25rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .arch-strips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .arch-strip-frame {
+    height: 240px;
+  }
+  
+  .arch-nav-stagger-item.align-right {
+    justify-content: flex-start;
+  }
+}
+
+

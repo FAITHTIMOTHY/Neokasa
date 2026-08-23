@@ -49,21 +49,33 @@ export default function ContactSection() {
 
   return (
     <section id="contact" style={{
-      padding: '5rem 1.5rem',
+      padding: '5rem 1.5rem 2rem 1.5rem',
       maxWidth: '1400px',
       margin: '0 auto',
-      borderTop: '1px solid var(--border-strong)'
+      position: 'relative'
     }}>
-      {/* Section Header */}
-      <div style={{ marginBottom: '3rem' }}>
-        <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-          // CONNECT WITH NEO KASA
-        </div>
-        <h2 style={{ textTransform: 'uppercase', marginTop: '0.2rem', color: 'var(--text-heading)' }}>
-          Start a Spatial Project
+      {/* Top Folio Bar */}
+      <div className="arch-folio-bar">
+        <div>NEO KASA</div>
+        <div className="arch-folio-center">NEO KASA | Studio Inquiries 2025</div>
+        <div className="arch-folio-page">10</div>
+      </div>
+
+      {/* Drafting L-Bracket Header */}
+      <div className="arch-drafting-bracket">
+        <h2 style={{
+          fontFamily: 'var(--font-display)',
+          fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
+          fontWeight: '800',
+          color: 'var(--text-heading)',
+          textTransform: 'uppercase',
+          margin: 0
+        }}>
+          Initiate a Project Consultation
         </h2>
-        <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', marginTop: '0.5rem' }}>
-          Send us your project details or site parameters to initiate a formal consultation with our partners.
+        <div className="arch-drafting-baseline" />
+        <p style={{ color: 'var(--text-secondary)', maxWidth: '650px', fontSize: '1.02rem', lineHeight: 1.75 }}>
+          Send your project details, site parameters, or spatial inquiries to begin a formal architectural collaboration with Nsikakabasi Essien & the NEO KASA studio.
         </p>
       </div>
 
@@ -342,6 +354,11 @@ export default function ContactSection() {
           </div>
         </div>
 
+      </div>
+
+      {/* Giant Cropped "CONTACT" Watermark */}
+      <div className="arch-watermark-title" style={{ marginTop: '1rem' }}>
+        CONTACT
       </div>
     </section>
   );

@@ -43,84 +43,34 @@ export default function AboutFounder({ onOpenContact }) {
 
   return (
     <section id="founder" style={{
-      padding: '6rem 1.5rem',
+      padding: '5rem 1.5rem 2rem 1.5rem',
       maxWidth: '1400px',
       margin: '0 auto',
-      borderTop: '1px solid var(--border-strong)'
+      position: 'relative'
     }}>
-      {/* Category Header */}
-      <div style={{ marginBottom: '3.5rem' }}>
-        <div style={{
-          fontSize: '0.75rem',
-          fontFamily: 'var(--font-mono)',
-          letterSpacing: '0.2em',
-          color: 'var(--accent-gold)',
-          textTransform: 'uppercase',
-          fontWeight: '700',
-          marginBottom: '0.4rem'
-        }}>
-          // LEADERSHIP & CREATIVE DIRECTION
-        </div>
-        <h2 style={{ textTransform: 'uppercase', color: 'var(--text-heading)', margin: 0 }}>
-          About The Founder
-        </h2>
+      {/* Top Architectural Folio Bar (Reference Image) */}
+      <div className="arch-folio-bar">
+        <div>NEO KASA</div>
+        <div className="arch-folio-center">Nsikakabasi Essien | Portfolio 2025</div>
+        <div className="arch-folio-page">01</div>
       </div>
 
       {/* Main Founder Profile Grid */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: '380px 1fr',
+        gridTemplateColumns: 'minmax(320px, 420px) 1fr',
         gap: '3.5rem',
         alignItems: 'start',
-        marginBottom: '4rem'
+        marginBottom: '2rem'
       }} className="founder-grid-responsive">
 
-        {/* Left Column: Architectural Portrait Card & Quick Identity */}
-        <div style={{
-          background: 'var(--bg-card)',
-          border: '1px solid var(--border-strong)',
-          padding: '2.25rem 1.75rem',
+        {/* Left Column: Portrait Slideshow Card with Corner Frame Ticks */}
+        <div className="arch-corner-card" style={{
+          padding: '1.25rem',
           borderRadius: '4px',
           boxShadow: 'var(--shadow-elevation)',
           position: 'relative'
         }}>
-          {/* Studio Accent Top Badge */}
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            borderBottom: '1px solid var(--border-subtle)',
-            paddingBottom: '1.25rem',
-            marginBottom: '1.5rem'
-          }}>
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.75rem'
-            }}>
-              <div style={{
-                width: '40px',
-                height: '40px',
-                background: 'var(--color-navy)',
-                borderRadius: '4px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '4px'
-              }}>
-                <LogoIcon size={32} color="var(--color-warm-white)" />
-              </div>
-              <div>
-                <div style={{ fontFamily: 'var(--font-display)', fontWeight: '800', fontSize: '1.1rem', letterSpacing: '0.1em', color: 'var(--text-heading)', lineHeight: 1 }}>
-                  NEO KASA
-                </div>
-                <div style={{ fontSize: '0.65rem', fontFamily: 'var(--font-mono)', color: 'var(--accent-gold)', letterSpacing: '0.1em', marginTop: '2px', fontWeight: '600' }}>
-                  STUDIO MONOGRAPH
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Founder Portrait 3-Second Slideshow */}
           <div
             onMouseEnter={() => setIsHovered(true)}
@@ -128,13 +78,12 @@ export default function AboutFounder({ onOpenContact }) {
             style={{
               position: 'relative',
               width: '100%',
-              height: '400px',
-              borderRadius: '4px',
+              height: '460px',
+              borderRadius: '2px',
               overflow: 'hidden',
               background: 'var(--bg-secondary)',
               border: '1px solid var(--border-subtle)',
-              marginBottom: '1.5rem',
-              boxShadow: '0 12px 32px rgba(0, 0, 0, 0.15)'
+              marginBottom: '1.25rem'
             }}
           >
             {founderImages.map((img, idx) => {
@@ -162,17 +111,16 @@ export default function AboutFounder({ onOpenContact }) {
                       display: 'block'
                     }}
                   />
-                  {/* Subtle Dark Vignette / Gradient Overlay */}
                   <div style={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'linear-gradient(to top, rgba(14, 26, 43, 0.75) 0%, rgba(14, 26, 43, 0.1) 40%, transparent 70%)'
+                    background: 'linear-gradient(to top, rgba(14, 26, 43, 0.75) 0%, rgba(14, 26, 43, 0.05) 40%, transparent 70%)'
                   }} />
                 </div>
               );
             })}
 
-            {/* Slideshow Arrow Controls (Faint / Minimalist) */}
+            {/* Slideshow Arrow Controls */}
             <button
               onClick={prevSlide}
               aria-label="Previous Portrait"
@@ -181,23 +129,22 @@ export default function AboutFounder({ onOpenContact }) {
                 left: '8px',
                 top: '50%',
                 transform: 'translateY(-50%)',
-                background: 'rgba(0, 0, 0, 0.25)',
-                color: 'rgba(255, 255, 255, 0.75)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
+                background: 'rgba(0, 0, 0, 0.35)',
+                color: 'rgba(255, 255, 255, 0.85)',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
                 borderRadius: '50%',
-                width: '28px',
-                height: '28px',
+                width: '32px',
+                height: '32px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                opacity: isHovered ? 0.5 : 0.15,
-                transition: 'opacity 0.3s ease, background 0.3s ease',
-                backdropFilter: 'blur(2px)',
+                opacity: isHovered ? 0.9 : 0.3,
+                transition: 'all 0.2s ease',
                 zIndex: 4
               }}
             >
-              <ChevronLeft size={14} />
+              <ChevronLeft size={16} />
             </button>
 
             <button
@@ -208,200 +155,160 @@ export default function AboutFounder({ onOpenContact }) {
                 right: '8px',
                 top: '50%',
                 transform: 'translateY(-50%)',
-                background: 'rgba(0, 0, 0, 0.25)',
-                color: 'rgba(255, 255, 255, 0.75)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
+                background: 'rgba(0, 0, 0, 0.35)',
+                color: 'rgba(255, 255, 255, 0.85)',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
                 borderRadius: '50%',
-                width: '28px',
-                height: '28px',
+                width: '32px',
+                height: '32px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                opacity: isHovered ? 0.5 : 0.15,
-                transition: 'opacity 0.3s ease, background 0.3s ease',
-                backdropFilter: 'blur(2px)',
+                opacity: isHovered ? 0.9 : 0.3,
+                transition: 'all 0.2s ease',
                 zIndex: 4
               }}
             >
-              <ChevronRight size={14} />
+              <ChevronRight size={16} />
             </button>
           </div>
 
-          {/* Profile Identity Details */}
-          <div style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
-            <h3 style={{
-              fontSize: '1.5rem',
-              color: 'var(--text-heading)',
-              fontFamily: 'var(--font-display)',
-              marginBottom: '0.25rem',
-              letterSpacing: '0.04em'
-            }}>
-              Nsikakabasi Essien
-            </h3>
-
-            <div style={{
-              fontSize: '0.85rem',
-              color: 'var(--accent-gold)',
-              fontWeight: '700',
-              fontFamily: 'var(--font-sans)',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-              marginBottom: '0.75rem'
-            }}>
-              Architect & Founder of NEO KASA
-            </div>
-
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.4rem',
-              fontSize: '0.8rem',
-              color: 'var(--text-secondary)',
-              background: 'var(--bg-secondary)',
-              padding: '0.35rem 0.75rem',
-              borderRadius: '20px',
-              border: '1px solid var(--border-subtle)'
-            }}>
-              <MapPin size={13} color="var(--accent-gold)" />
-              <span>Uyo, Akwa Ibom State, Nigeria</span>
-            </div>
-          </div>
-
-          {/* Quick Metrics / Key Focus */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.85rem', padding: '0.5rem 0', borderBottom: '1px dashed var(--border-subtle)' }}>
-              <span style={{ color: 'var(--text-muted)' }}>Motto</span>
-              <span style={{ fontWeight: '700', color: 'var(--accent-gold)' }}>Modern Thinking, Timeless Architecture</span>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.85rem', padding: '0.5rem 0', borderBottom: '1px dashed var(--border-subtle)' }}>
-              <span style={{ color: 'var(--text-muted)' }}>Role</span>
-              <span style={{ fontWeight: '700', color: 'var(--text-heading)' }}>Founder & Creative Mind</span>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.85rem', padding: '0.5rem 0' }}>
-              <span style={{ color: 'var(--text-muted)' }}>Core Tools</span>
-              <span style={{ fontWeight: '700', color: 'var(--text-heading)' }}>Revit • V-Ray • 3ds Max • Photoshop</span>
-            </div>
+          {/* Quick Caption Under Portrait */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.78rem', fontFamily: 'var(--font-mono)' }}>
+            <span style={{ color: 'var(--accent-gold)', fontWeight: '700' }}>ARCHITECT PORTRAIT</span>
+            <span style={{ color: 'var(--text-muted)' }}>0{currentSlide + 1} / 0{founderImages.length}</span>
           </div>
         </div>
 
-        {/* Right Column: Bio, Architectural Philosophy & Competencies */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-
-          {/* Main Biography Card */}
-          <div style={{
-            background: 'var(--bg-card)',
-            border: '1px solid var(--border-strong)',
-            padding: '3rem 2.5rem',
-            borderRadius: '4px',
-            position: 'relative'
+        {/* Right Column: Editorial Bio, Contact Row & Tools (Reference Image 4) */}
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          
+          {/* Main Greeting / Title */}
+          <h2 style={{
+            fontSize: 'clamp(2.2rem, 4vw, 3.25rem)',
+            color: 'var(--text-heading)',
+            fontFamily: 'var(--font-display)',
+            fontWeight: '900',
+            marginBottom: '1.25rem',
+            lineHeight: 1.15
           }}>
-            <div style={{
-              fontSize: '0.75rem',
-              fontFamily: 'var(--font-mono)',
-              color: 'var(--accent-gold)',
-              letterSpacing: '0.15em',
-              marginBottom: '1rem',
-              fontWeight: '700'
-            }}>
-              // ABOUT ME
-            </div>
+            Hi! I'm Nsikakabasi
+          </h2>
 
-            <h3 style={{
-              fontSize: '2rem',
-              color: 'var(--text-heading)',
-              marginBottom: '1.5rem',
-              lineHeight: 1.25,
-              fontFamily: 'var(--font-display)'
-            }}>
-              Modern Thinking, Timeless Architecture.
-            </h3>
-
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.85, marginBottom: '1.25rem' }}>
-              I am <strong>Nsikakabasi Essien</strong>, the creative mind behind <strong>NEO KASA</strong>, an architect driven by a passion for creating meaningful spaces through thoughtful design and contemporary architectural thinking.
-            </p>
-
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.85, marginBottom: '1.25rem' }}>
-              My work is shaped by creativity, attention to detail, problem-solving, and a strong appreciation for the relationship between form and function. I believe architecture should respond to the needs of the present while remaining relevant and enduring over time.
-            </p>
-
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.85, marginBottom: '1.25rem' }}>
-              Using <strong>Autodesk Revit</strong>, <strong>V-Ray</strong>, <strong>3ds Max</strong>, and <strong>Adobe Photoshop</strong> as key tools in my design process, I transform ideas into detailed architectural models, immersive visualizations, and refined presentations. From the initial concept to the final visual, I enjoy exploring how design, technology, and creativity can come together to create spaces with character and identity.
-            </p>
-
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.85, marginBottom: '1.75rem' }}>
-              Through <strong>NEO KASA</strong>, I am building a design practice that reflects my perspective on architecture; bold in thought, intentional in execution, and timeless in expression.
-            </p>
-
-            {/* Design & Visualization Tool Stack Badges */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              flexWrap: 'wrap',
-              gap: '0.6rem',
-              padding: '1.25rem',
-              background: 'var(--bg-secondary)',
-              border: '1px solid var(--border-subtle)',
-              borderRadius: '4px',
-              marginBottom: '2rem'
-            }}>
-              <span style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--accent-gold)', fontWeight: '700', letterSpacing: '0.1em', marginRight: '0.5rem' }}>
-                PRIMARY TOOLS:
-              </span>
-              {['Autodesk Revit', 'V-Ray', '3ds Max', 'Adobe Photoshop'].map((tool, idx) => (
-                <span key={idx} style={{
-                  fontSize: '0.8rem',
-                  fontFamily: 'var(--font-mono)',
-                  background: 'var(--bg-card)',
-                  color: 'var(--text-heading)',
-                  padding: '0.35rem 0.75rem',
-                  borderRadius: '3px',
-                  border: '1px solid var(--border-strong)',
-                  fontWeight: '600'
-                }}>
-                  {tool}
-                </span>
-              ))}
-            </div>
-
-            {/* Founder Quote Block */}
-            <div style={{
-              padding: '1.75rem',
-              background: 'var(--bg-secondary)',
-              borderLeft: '4px solid var(--accent-gold)',
-              borderRadius: '2px'
-            }}>
-              <div style={{
-                fontSize: '0.8rem',
-                fontFamily: 'var(--font-mono)',
-                fontWeight: '700',
-                color: 'var(--accent-gold)',
-                letterSpacing: '0.15em',
-                marginBottom: '0.5rem'
-              }}>
-                NEO KASA PHILOSOPHY
-              </div>
-              <div style={{
-                fontFamily: 'var(--font-serif)',
-                fontStyle: 'italic',
-                fontSize: '1.35rem',
-                color: 'var(--text-heading)',
-                lineHeight: 1.5,
-                marginBottom: '0.75rem'
-              }}>
-                "Modern Thinking, Timeless Architecture."
-              </div>
-              <div style={{
-                fontSize: '0.85rem',
-                color: 'var(--text-secondary)',
-                lineHeight: 1.6
-              }}>
-                Bold in thought, intentional in execution, and timeless in expression.
-              </div>
-            </div>
+          <div style={{
+            fontSize: '0.85rem',
+            color: 'var(--accent-gold)',
+            fontWeight: '700',
+            fontFamily: 'var(--font-mono)',
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+            marginBottom: '1.5rem'
+          }}>
+            Architect & Founder of NEO KASA
           </div>
+
+          <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.85, marginBottom: '1.15rem' }}>
+            I am <strong>Nsikakabasi Essien</strong>, the creative mind behind <strong>NEO KASA</strong>, an architect with a lifelong passion for design and craft. My work is rooted in creating impactful spatial solutions that benefit humanity and elevate the built environment.
+          </p>
+
+          <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.85, marginBottom: '1.15rem' }}>
+            I am driven to design experiential spaces—designs that are fiercely rooted in place, full of purpose, and always keep the user at the centre. My portfolio explores the powerful synthesis of modern thinking, climate-adaptive architecture, and technical precision.
+          </p>
+
+          <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.85, marginBottom: '1.75rem' }}>
+            Using <strong>Autodesk Revit</strong>, <strong>V-Ray</strong>, <strong>3ds Max</strong>, and <strong>Adobe Photoshop</strong> as primary tools, I transform ideas into detailed architectural models and immersive spatial presentations with character and enduring identity.
+          </p>
+
+          {/* Direct Contact Icon Row (Reference Image 4) */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1.5rem',
+            flexWrap: 'wrap',
+            padding: '1.1rem 0',
+            borderTop: '1px solid var(--border-subtle)',
+            borderBottom: '1px solid var(--border-subtle)',
+            marginBottom: '1.75rem',
+            fontSize: '0.85rem',
+            fontFamily: 'var(--font-mono)'
+          }}>
+            <a 
+              href="mailto:Nsikakabasiessien101@gmail.com" 
+              style={{ color: 'var(--text-heading)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.45rem', fontWeight: '600' }}
+              title="Email Nsikakabasi"
+            >
+              <span style={{ color: 'var(--accent-gold)' }}>✉</span>
+              <span>Nsikakabasiessien101@gmail.com</span>
+            </a>
+
+            <a 
+              href="https://wa.me/2349013717660" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ color: 'var(--text-heading)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.45rem', fontWeight: '600' }}
+              title="WhatsApp Direct"
+            >
+              <span style={{ color: 'var(--accent-gold)' }}>✆</span>
+              <span>+234 901 371 7660</span>
+            </a>
+
+            <a 
+              href="https://x.com/_nkhay_22" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ color: 'var(--text-heading)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.45rem', fontWeight: '600' }}
+              title="Twitter/X Profile"
+            >
+              <span style={{ color: 'var(--accent-gold)', fontWeight: 'bold' }}>𝕏</span>
+              <span>@_nkhay_22</span>
+            </a>
+
+            <a 
+              href="https://www.linkedin.com/in/nsikakabasi-essien-34a293288" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ color: 'var(--text-heading)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.45rem', fontWeight: '600' }}
+              title="LinkedIn Profile"
+            >
+              <span style={{ color: 'var(--accent-gold)' }}>in</span>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+
+          {/* Primary Tool Stack Badges */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '0.5rem'
+          }}>
+            <span style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--accent-gold)', fontWeight: '700', letterSpacing: '0.1em', marginRight: '0.25rem' }}>
+              TECH STACK:
+            </span>
+            {['Autodesk Revit', 'V-Ray', '3ds Max', 'Adobe Photoshop', 'BIM Modeling'].map((tool, idx) => (
+              <span key={idx} style={{
+                fontSize: '0.78rem',
+                fontFamily: 'var(--font-mono)',
+                background: 'var(--bg-secondary)',
+                color: 'var(--text-heading)',
+                padding: '0.3rem 0.65rem',
+                borderRadius: '2px',
+                border: '1px solid var(--border-subtle)',
+                fontWeight: '600'
+              }}>
+                {tool}
+              </span>
+            ))}
+          </div>
+
         </div>
 
+      </div>
+
+      {/* Giant Cropped Typographic Watermark (Reference Image 4) */}
+      <div className="arch-watermark-title" style={{ marginTop: '0.5rem' }}>
+        ABOUT
       </div>
 
       <style>{`
@@ -415,3 +322,4 @@ export default function AboutFounder({ onOpenContact }) {
     </section>
   );
 }
+

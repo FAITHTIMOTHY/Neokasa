@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Search, Filter, Grid, List, Eye, MapPin, Calendar, Maximize2 } from 'lucide-react';
+import { Search, Filter, Grid, List, Eye, MapPin, Calendar, Maximize2, ArrowRight, Layers } from 'lucide-react';
 import { PROJECTS } from '../data/projects';
 
 export default function ProjectGrid({ onSelectProject }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const [layoutMode, setLayoutMode] = useState("grid"); // "grid" or "list"
 
   const categories = ["All", "Design Showcase", "Residential", "Institutional", "Commercial"];
 
@@ -18,76 +17,129 @@ export default function ProjectGrid({ onSelectProject }) {
     return matchesCategory && matchesSearch;
   });
 
+  const sketchGallery = [
+    { title: "Parametric Facade Shading Study", image: "/assets/fashion_house/fashion_house_material_analysis.jpg", subtitle: "Louver & Screen Geometry" },
+    { title: "UNIUYO Structural Working Blueprint", image: "/assets/uniuyo/uniuyo_working_drawings.png", subtitle: "A101 Section & Atrium Study" },
+    { title: "Azure Terrace CAD Unit Layout", image: "/assets/concepts/azure_terrace_cad_elevations2.jpg", subtitle: "2D Section & Elevation" },
+    { title: "Heritage Duplex Cross-Section", image: "/assets/residences/heritage_duplex_floor_plans.jpg", subtitle: "Floor Plan CAD Drafting" },
+    { title: "Curved Pod Clerestory Study", image: "/assets/fashion_house/fashion_house_elevations.png", subtitle: "Rainwater & Fall Vectors" },
+    { title: "Sculpture & Lawn Sightline Study", image: "/assets/concepts/sculpture_pavilion_residence_lawn.jpg", subtitle: "Outdoor Landscape Concept" }
+  ];
+
   return (
     <section id="projects" style={{
-      padding: '4rem 1.5rem',
+      padding: '5rem 1.5rem 2rem 1.5rem',
       maxWidth: '1400px',
-      margin: '0 auto'
+      margin: '0 auto',
+      position: 'relative'
     }}>
-      {/* Section Header */}
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '0.5rem',
-        marginBottom: '2.5rem'
-      }}>
+      {/* =========================================================================
+          SHEET 02: "CONTENT" VERTICAL PANORAMIC STRIP INDEX (Reference Image 2)
+          ========================================================================= */}
+      <div style={{ marginBottom: '6rem' }}>
+        {/* Folio Bar */}
+        <div className="arch-folio-bar">
+          <div>NEO KASA</div>
+          <div className="arch-folio-center">NEO KASA | Portfolio 2025</div>
+          <div className="arch-folio-page">02</div>
+        </div>
+
+        {/* Section Heading */}
         <div style={{
           fontSize: '0.75rem',
           fontFamily: 'var(--font-mono)',
           letterSpacing: '0.2em',
-          color: 'var(--text-muted)',
-          textTransform: 'uppercase'
+          color: 'var(--accent-gold)',
+          textTransform: 'uppercase',
+          fontWeight: '700',
+          marginBottom: '1.25rem'
         }}>
-          // PORTFOLIO SHOWCASE
+          // PROJECT INDEX & DIRECTORY
         </div>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'flex-end',
-          flexWrap: 'wrap',
-          gap: '1rem'
-        }}>
-          <h2 style={{ color: 'var(--text-primary)', textTransform: 'uppercase' }}>
-            Selected Architectural Works
-          </h2>
-          <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-            Showing {filteredProjects.length} of {PROJECTS.length} Projects
-          </div>
+
+        {/* 6 Vertical Panoramic Strips (Reference Image 2) */}
+        <div className="arch-strips-grid">
+          {PROJECTS.map((proj, idx) => (
+            <div
+              key={proj.id}
+              className="arch-strip-item"
+              onClick={() => onSelectProject && onSelectProject(proj)}
+              title={`Inspect ${proj.title}`}
+            >
+              <div className="arch-strip-frame">
+                <img src={proj.image} alt={proj.title} />
+                <div className="arch-strip-num">0{idx + 1}</div>
+              </div>
+              <div className="arch-strip-title">
+                {proj.title.split(' ').slice(0, 3).join(' ')}
+              </div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
+                {proj.category}
+              </div>
+            </div>
+          ))}
+
+          {/* 6th Strip: Sketches / Explorations */}
+          <a
+            href="#sketches"
+            className="arch-strip-item"
+            style={{ textDecoration: 'none' }}
+          >
+            <div className="arch-strip-frame" style={{ background: 'var(--bg-secondary)' }}>
+              <img src="/assets/uniuyo/uniuyo_working_drawings.png" alt="Sketches & Blueprints" />
+              <div className="arch-strip-num">06</div>
+            </div>
+            <div className="arch-strip-title">
+              Sketches & Studies
+            </div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
+              Explorations
+            </div>
+          </a>
+        </div>
+
+        {/* Giant Cropped "CONTENT" Watermark (Reference Image 2) */}
+        <div className="arch-watermark-title" style={{ marginTop: '1rem' }}>
+          CONTENT
         </div>
       </div>
 
-      {/* Filter Toolbar & Search */}
+      {/* =========================================================================
+          FILTER & SEARCH TOOLBAR
+          ========================================================================= */}
       <div style={{
         background: 'var(--bg-card)',
         border: '1px solid var(--border-strong)',
         padding: '1rem 1.25rem',
-        marginBottom: '2.5rem',
+        marginBottom: '4rem',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
         flexWrap: 'wrap',
-        gap: '1rem'
+        gap: '1rem',
+        borderRadius: '2px'
       }}>
         {/* Category Pills */}
         <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
-          <Filter size={16} color="var(--text-muted)" style={{ marginRight: '0.25rem' }} />
+          <Filter size={15} color="var(--accent-gold)" style={{ marginRight: '0.25rem' }} />
           {categories.map((cat, idx) => (
             <button
               key={idx}
               onClick={() => setSelectedCategory(cat)}
               style={{
-                background: selectedCategory === cat ? 'var(--color-charcoal)' : 'transparent',
-                color: selectedCategory === cat ? 'var(--color-warm-white)' : 'var(--text-primary)',
+                background: selectedCategory === cat ? 'var(--text-heading)' : 'transparent',
+                color: selectedCategory === cat ? 'var(--bg-primary)' : 'var(--text-primary)',
                 border: '1px solid',
-                borderColor: selectedCategory === cat ? 'var(--color-charcoal)' : 'var(--border-subtle)',
-                padding: '0.45rem 0.9rem',
+                borderColor: selectedCategory === cat ? 'var(--text-heading)' : 'var(--border-subtle)',
+                padding: '0.4rem 0.85rem',
                 fontSize: '0.75rem',
-                fontFamily: 'var(--font-sans)',
+                fontFamily: 'var(--font-mono)',
                 fontWeight: '600',
                 letterSpacing: '0.06em',
                 textTransform: 'uppercase',
                 cursor: 'pointer',
-                transition: 'all 0.2s ease'
+                transition: 'all 0.2s ease',
+                borderRadius: '2px'
               }}
             >
               {cat}
@@ -95,275 +147,295 @@ export default function ProjectGrid({ onSelectProject }) {
           ))}
         </div>
 
-        {/* Right Tools: Search Bar & View Mode Toggle */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', width: 'auto' }}>
-          {/* Search Input */}
-          <div style={{
-            position: 'relative',
-            display: 'flex',
-            alignItems: 'center'
-          }}>
-            <Search size={14} color="var(--text-muted)" style={{ position: 'absolute', left: '0.75rem' }} />
-            <input
-              type="text"
-              placeholder="Search project, location, material..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              style={{
-                background: 'var(--bg-primary)',
-                border: '1px solid var(--border-subtle)',
-                color: 'var(--text-primary)',
-                padding: '0.45rem 0.75rem 0.45rem 2.2rem',
-                fontSize: '0.8rem',
-                fontFamily: 'var(--font-sans)',
-                width: '220px',
-                outline: 'none'
-              }}
-            />
-          </div>
-
-          {/* Layout Mode Toggle */}
-          <div style={{ display: 'flex', border: '1px solid var(--border-subtle)' }} className="hide-on-mobile">
-            <button
-              onClick={() => setLayoutMode('grid')}
-              title="Grid View"
-              style={{
-                background: layoutMode === 'grid' ? 'var(--bg-secondary)' : 'transparent',
-                color: 'var(--text-primary)',
-                border: 'none',
-                padding: '0.45rem 0.65rem',
-                cursor: 'pointer'
-              }}
-            >
-              <Grid size={16} />
-            </button>
-            <button
-              onClick={() => setLayoutMode('list')}
-              title="Editorial List View"
-              style={{
-                background: layoutMode === 'list' ? 'var(--bg-secondary)' : 'transparent',
-                color: 'var(--text-primary)',
-                border: 'none',
-                padding: '0.45rem 0.65rem',
-                cursor: 'pointer'
-              }}
-            >
-              <List size={16} />
-            </button>
-          </div>
+        {/* Search Input */}
+        <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+          <Search size={14} color="var(--text-muted)" style={{ position: 'absolute', left: '0.75rem' }} />
+          <input
+            type="text"
+            placeholder="Search project, material, location..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            style={{
+              background: 'var(--bg-primary)',
+              border: '1px solid var(--border-subtle)',
+              color: 'var(--text-primary)',
+              padding: '0.45rem 0.75rem 0.45rem 2.2rem',
+              fontSize: '0.8rem',
+              fontFamily: 'var(--font-sans)',
+              width: '240px',
+              outline: 'none',
+              borderRadius: '2px'
+            }}
+          />
         </div>
       </div>
 
-      {/* Projects Display Grid / List */}
-      {filteredProjects.length === 0 ? (
-        <div style={{
-          textAlign: 'center',
-          padding: '4rem 1.5rem',
-          background: 'var(--bg-card)',
-          border: '1px solid var(--border-subtle)'
-        }}>
-          <p style={{ color: 'var(--text-muted)' }}>No architectural projects match your filter query.</p>
-          <button 
-            onClick={() => { setSelectedCategory("All"); setSearchQuery(""); }} 
-            className="btn-secondary" 
-            style={{ marginTop: '1rem' }}
-          >
-            Reset Filters
-          </button>
-        </div>
-      ) : layoutMode === 'grid' ? (
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
-          gap: '2rem'
-        }} className="mobile-grid-1">
-          {filteredProjects.map((project) => (
+      {/* =========================================================================
+          SHEETS 03 - 07: EDITORIAL PROJECT CASE STUDY SHEETS (Reference Image 3)
+          ========================================================================= */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
+        {filteredProjects.map((project, pIdx) => {
+          const sheetNumber = String(pIdx + 3).padStart(2, '0');
+          const watermarkNumber = String(pIdx + 1).padStart(2, '0');
+
+          return (
             <div 
               key={project.id}
-              className="card-architectural img-zoom-container"
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                cursor: 'pointer',
-                borderRadius: '2px'
+                position: 'relative',
+                borderTop: '1px solid var(--border-strong)',
+                paddingTop: '2rem'
               }}
-              onClick={() => onSelectProject(project)}
             >
-              {/* Image Container */}
-              <div style={{ position: 'relative', height: '260px', overflow: 'hidden' }}>
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-                {/* Category Badge */}
-                <div style={{
-                  position: 'absolute',
-                  top: '0.75rem',
-                  left: '0.75rem',
-                  background: 'var(--glass-bg)',
-                  border: '1px solid var(--border-strong)',
-                  padding: '0.25rem 0.65rem',
-                  fontSize: '0.65rem',
-                  fontFamily: 'var(--font-mono)',
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  fontWeight: '600'
-                }}>
-                  {project.category}
-                </div>
-                {/* Status Badge */}
-                <div style={{
-                  position: 'absolute',
-                  top: '0.75rem',
-                  right: '0.75rem',
-                  background: 'var(--color-charcoal)',
-                  color: 'var(--color-warm-white)',
-                  padding: '0.25rem 0.65rem',
-                  fontSize: '0.65rem',
-                  fontFamily: 'var(--font-mono)',
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase'
-                }}>
-                  {project.year}
-                </div>
-                {/* Visual Showcase Indicator */}
-                {project.isConceptOnly && (
-                  <div style={{
-                    position: 'absolute',
-                    bottom: '0.75rem',
-                    left: '0.75rem',
-                    background: 'var(--accent-gold)',
-                    color: 'var(--color-charcoal-deep)',
-                    padding: '0.25rem 0.65rem',
-                    fontSize: '0.62rem',
-                    fontFamily: 'var(--font-mono)',
-                    fontWeight: '700',
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.3)'
-                  }}>
-                    3D Visual & Material Showcase
-                  </div>
-                )}
+              {/* Top Folio Bar */}
+              <div className="arch-folio-bar">
+                <div>NEO KASA</div>
+                <div className="arch-folio-center">NEO KASA | Portfolio 2025</div>
+                <div className="arch-folio-page">{sheetNumber}</div>
               </div>
 
-              {/* Card Meta Content */}
-              <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
-                <div>
-                  <h3 style={{ 
-                    fontFamily: 'var(--font-display)', 
-                    fontSize: '1.25rem', 
-                    fontWeight: '700',
-                    marginBottom: '0.25rem' 
+              {/* Drafting L-Bracket Header (Reference Image 3) */}
+              <div className="arch-drafting-bracket">
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '1rem' }}>
+                  <h2 style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
+                    fontWeight: '800',
+                    color: 'var(--text-heading)',
+                    textTransform: 'uppercase',
+                    lineHeight: 1.1,
+                    margin: 0
                   }}>
                     {project.title}
-                  </h3>
-                  <div style={{ 
-                    fontSize: '0.85rem', 
-                    color: 'var(--text-secondary)',
-                    fontFamily: 'var(--font-serif)',
-                    fontStyle: 'italic',
-                    marginBottom: '1rem' 
-                  }}>
-                    {project.subtitle}
-                  </div>
-
-                  <div style={{ display: 'flex', gap: '1rem', fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                      <MapPin size={14} />
-                      {project.location}
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                      <Maximize2 size={14} />
-                      {project.area}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Materials Tags */}
-                <div>
-                  <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
-                    {project.materials.slice(0, 3).map((mat, mIdx) => (
-                      <span 
-                        key={mIdx}
-                        style={{
-                          background: 'var(--bg-secondary)',
-                          border: '1px solid var(--border-subtle)',
-                          padding: '0.2rem 0.5rem',
-                          fontSize: '0.65rem',
-                          color: 'var(--text-secondary)'
-                        }}
-                      >
-                        {mat}
-                      </span>
-                    ))}
-                  </div>
-
+                  </h2>
                   <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    paddingTop: '0.75rem',
-                    borderTop: '1px solid var(--border-subtle)',
-                    fontSize: '0.75rem',
-                    fontFamily: 'var(--font-sans)',
-                    fontWeight: '600',
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
-                    color: 'var(--text-primary)'
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.82rem',
+                    color: 'var(--accent-gold)',
+                    fontWeight: '700',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase'
                   }}>
-                    <span>Inspect Case Study</span>
-                    <Eye size={16} />
+                    Studio Project, {project.year}
                   </div>
+                </div>
+
+                <div className="arch-drafting-baseline" />
+
+                {/* Meta Row */}
+                <div style={{
+                  fontSize: '0.85rem',
+                  fontFamily: 'var(--font-mono)',
+                  color: 'var(--text-muted)',
+                  marginBottom: '1rem',
+                  letterSpacing: '0.04em'
+                }}>
+                  <strong style={{ color: 'var(--text-heading)' }}>Typology:</strong> {project.category} ({project.area}) &nbsp;|&nbsp; <strong style={{ color: 'var(--text-heading)' }}>Location:</strong> {project.location}
+                </div>
+
+                {/* Description Narrative */}
+                <p style={{
+                  fontSize: '1.02rem',
+                  color: 'var(--text-secondary)',
+                  lineHeight: 1.8,
+                  maxWidth: '920px',
+                  marginBottom: '1.5rem'
+                }}>
+                  {project.description}
+                </p>
+              </div>
+
+              {/* Hero Architectural Render Showcase Container (Click to Inspect) */}
+              <div 
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: '520px',
+                  borderRadius: '2px',
+                  overflow: 'hidden',
+                  cursor: 'pointer',
+                  border: '1px solid var(--border-strong)',
+                  boxShadow: 'var(--shadow-elevation)',
+                  background: 'var(--bg-secondary)',
+                  marginBottom: '1.5rem'
+                }}
+                className="img-zoom-container"
+                onClick={() => onSelectProject && onSelectProject(project)}
+              >
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+
+                {/* Hover Quick Action Badge */}
+                <div style={{
+                  position: 'absolute',
+                  bottom: '1.25rem',
+                  right: '1.25rem',
+                  background: 'var(--color-navy)',
+                  color: 'var(--color-warm-white)',
+                  padding: '0.65rem 1.25rem',
+                  borderRadius: '2px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.6rem',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.75rem',
+                  fontWeight: '700',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.4)',
+                  zIndex: 10
+                }}>
+                  <Eye size={15} color="var(--accent-gold)" />
+                  <span>Inspect Full Case Study & Blueprints</span>
+                  <ArrowRight size={14} />
+                </div>
+
+                {/* Material Badges on Card */}
+                <div style={{
+                  position: 'absolute',
+                  bottom: '1.25rem',
+                  left: '1.25rem',
+                  display: 'flex',
+                  gap: '0.4rem',
+                  flexWrap: 'wrap',
+                  maxWidth: '65%',
+                  zIndex: 10
+                }} className="hide-on-mobile">
+                  {project.materials.slice(0, 3).map((mat, mIdx) => (
+                    <span 
+                      key={mIdx}
+                      style={{
+                        background: 'rgba(14, 26, 43, 0.8)',
+                        backdropFilter: 'blur(6px)',
+                        color: 'var(--color-warm-white)',
+                        border: '1px solid rgba(255,255,255,0.15)',
+                        padding: '0.25rem 0.6rem',
+                        fontSize: '0.68rem',
+                        fontFamily: 'var(--font-mono)',
+                        borderRadius: '2px'
+                      }}
+                    >
+                      {mat}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Oversized Corner Watermark Number (Reference Image 3) */}
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-1rem' }}>
+                <div className="arch-watermark-number">
+                  {watermarkNumber}
                 </div>
               </div>
             </div>
-          ))}
+          );
+        })}
+      </div>
+
+      {/* =========================================================================
+          SHEET 08: "MISCELLANEOUS: SKETCHES & STUDIES" MOSAIC (Reference Image 1)
+          ========================================================================= */}
+      <div id="sketches" style={{
+        marginTop: '6rem',
+        borderTop: '1px solid var(--border-strong)',
+        paddingTop: '2rem'
+      }}>
+        {/* Folio Bar */}
+        <div className="arch-folio-bar">
+          <div>NEO KASA</div>
+          <div className="arch-folio-center">NEO KASA | Portfolio 2025</div>
+          <div className="arch-folio-page">08</div>
         </div>
-      ) : (
-        /* List / Editorial Layout */
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-          {filteredProjects.map((project) => (
+
+        {/* L-Bracket Drafting Header (Reference Image 1) */}
+        <div className="arch-drafting-bracket">
+          <h2 style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
+            fontWeight: '800',
+            color: 'var(--text-heading)',
+            textTransform: 'uppercase',
+            margin: 0
+          }}>
+            Miscellaneous: Sketches & Explorations
+          </h2>
+          <div className="arch-drafting-baseline" />
+          <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', maxWidth: '800px', lineHeight: 1.7 }}>
+            A curated collection of concept development drawings, hand drafting studies, parametric facade solar calculations, and technical section details exploring the synthesis of form and climate adaptability.
+          </p>
+        </div>
+
+        {/* Collage / Mosaic Sketch Grid with Corner Cross Tick Marks (Reference Image 1) */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '2rem',
+          marginBottom: '2rem'
+        }}>
+          {sketchGallery.map((sketch, sIdx) => (
             <div 
-              key={project.id}
-              className="card-architectural mobile-grid-1"
+              key={sIdx}
+              className="arch-corner-card"
               style={{
-                display: 'grid',
-                gridTemplateColumns: '320px 1fr',
-                cursor: 'pointer',
-                overflow: 'hidden'
+                boxShadow: 'var(--shadow-elevation)',
+                borderRadius: '2px',
+                cursor: 'pointer'
               }}
-              onClick={() => onSelectProject(project)}
+              onClick={() => onSelectProject && onSelectProject(PROJECTS[sIdx % PROJECTS.length])}
             >
-              <div style={{ height: '220px', overflow: 'hidden' }}>
-                <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div style={{
+                position: 'relative',
+                height: '240px',
+                borderRadius: '2px',
+                overflow: 'hidden',
+                background: 'var(--bg-secondary)',
+                marginBottom: '1rem'
+              }}>
+                <img 
+                  src={sketch.image} 
+                  alt={sketch.title}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
-              <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                    <div>
-                      <div style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>{project.category} • {project.year}</div>
-                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', marginTop: '0.2rem' }}>{project.title}</h3>
-                      <div style={{ fontStyle: 'italic', fontFamily: 'var(--font-serif)', color: 'var(--text-secondary)' }}>{project.subtitle}</div>
-                    </div>
-                    <div style={{ fontSize: '0.8rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>{project.location}</div>
-                  </div>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginTop: '0.75rem', lineHeight: 1.5 }}>
-                    {project.description}
-                  </p>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{project.area}</div>
-                  <span className="btn-secondary" style={{ padding: '0.4rem 0.8rem', fontSize: '0.7rem' }}>
-                    {project.isConceptOnly ? "Inspect 3D Showcase & Specs →" : "View Blueprint & Specs →"}
-                  </span>
-                </div>
+
+              <div style={{
+                fontSize: '0.72rem',
+                fontFamily: 'var(--font-mono)',
+                color: 'var(--accent-gold)',
+                letterSpacing: '0.1em',
+                fontWeight: '700',
+                textTransform: 'uppercase',
+                marginBottom: '0.25rem'
+              }}>
+                STUDY // 0{sIdx + 1}
+              </div>
+
+              <div style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '1rem',
+                fontWeight: '700',
+                color: 'var(--text-heading)',
+                marginBottom: '0.2rem'
+              }}>
+                {sketch.title}
+              </div>
+
+              <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                {sketch.subtitle}
               </div>
             </div>
           ))}
         </div>
-      )}
+
+        {/* Giant Cropped "SKETCHES" Watermark (Reference Image 1) */}
+        <div className="arch-watermark-title" style={{ marginTop: '1rem' }}>
+          SKETCHES
+        </div>
+      </div>
     </section>
   );
 }
+
