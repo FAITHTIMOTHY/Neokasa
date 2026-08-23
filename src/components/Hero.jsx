@@ -60,6 +60,17 @@ export default function Hero({ onOpenContact, onSelectProject }) {
         
         {/* Left Column: Heading & Vision */}
         <div>
+          <div style={{
+            fontSize: '0.75rem',
+            fontFamily: 'var(--font-mono)',
+            letterSpacing: '0.2em',
+            color: 'var(--accent-gold)',
+            textTransform: 'uppercase',
+            fontWeight: '700',
+            marginBottom: '0.75rem'
+          }}>
+            // ARCHITECT & FOUNDER — NSIKAKABASI ESSIEN
+          </div>
 
           <h1 style={{
             color: 'var(--text-heading)',
@@ -79,19 +90,23 @@ export default function Hero({ onOpenContact, onSelectProject }) {
             marginBottom: '2rem',
             lineHeight: 1.7
           }}>
-            NEO KASA crafts progressive, climate-adaptive spatial works across institutional, residential, and sustainable typologies. We blend raw material purity with precision BIM engineering.
+            Welcome to the architectural practice of <strong>Nsikakabasi Essien</strong>, founder of <strong>NEO KASA</strong>. Crafting progressive, climate-adaptive spatial works across residential, institutional, and sustainable typologies.
           </p>
 
           {/* Action CTAs */}
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="#projects" className="btn-primary">
-              Explore Selected Works
+            <a href="#founder" className="btn-primary">
+              About The Founder
               <ArrowDown size={16} />
+            </a>
+
+            <a href="#projects" className="btn-secondary">
+              Selected Works
             </a>
 
             <button onClick={onOpenContact} className="btn-secondary">
               <Mail size={16} />
-              Contact Studio
+              Contact
             </button>
           </div>
         </div>

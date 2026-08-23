@@ -41,6 +41,9 @@ export default function App() {
           onSelectProject={(project) => setSelectedProject(project)}
         />
         
+        {/* About Founder & Spatial Leadership (Placed First) */}
+        <AboutFounder onOpenContact={scrollToContact} />
+
         {/* Clean Architectural Portfolio Showcase */}
         <ProjectGrid 
           onSelectProject={(project) => setSelectedProject(project)} 
@@ -48,9 +51,6 @@ export default function App() {
         
         {/* About Studio, Values & Brand Manifesto */}
         <StudioPhilosophy />
-
-        {/* About Founder & Spatial Leadership */}
-        <AboutFounder onOpenContact={scrollToContact} />
         
         {/* Simple Contact Form & Global Atelier Addresses */}
         <ContactSection />
