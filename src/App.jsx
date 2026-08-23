@@ -37,42 +37,30 @@ export default function App() {
       {/* Main Portfolio Sections */}
       <main style={{ flexGrow: 1 }}>
         {/* Fullscreen Hero */}
-        <ScrollReveal variant="fade-in" threshold={0.05}>
-          <Hero 
-            onOpenContact={scrollToContact} 
-            onSelectProject={(project) => setSelectedProject(project)}
-          />
-        </ScrollReveal>
+        <Hero 
+          onOpenContact={scrollToContact} 
+          onSelectProject={(project) => setSelectedProject(project)}
+        />
         
         {/* About Founder & Spatial Leadership (Placed First) */}
-        <ScrollReveal variant="fade-up" threshold={0.08}>
-          <AboutFounder onOpenContact={scrollToContact} />
-        </ScrollReveal>
+        <AboutFounder onOpenContact={scrollToContact} />
 
         {/* Clean Architectural Portfolio Showcase */}
-        <ScrollReveal variant="fade-up" threshold={0.08}>
-          <ProjectGrid 
-            onSelectProject={(project) => setSelectedProject(project)} 
-          />
-        </ScrollReveal>
+        <ProjectGrid 
+          onSelectProject={(project) => setSelectedProject(project)} 
+        />
         
         {/* About Studio, Values & Brand Manifesto */}
-        <ScrollReveal variant="fade-up" threshold={0.08}>
-          <StudioPhilosophy />
-        </ScrollReveal>
+        <StudioPhilosophy />
         
         {/* Simple Contact Form & Global Atelier Addresses */}
-        <ScrollReveal variant="fade-up" threshold={0.08}>
-          <ContactSection />
-        </ScrollReveal>
+        <ContactSection />
       </main>
 
       {/* Footer */}
-      <ScrollReveal variant="fade-in" threshold={0.05}>
-        <Footer 
-          onOpenContact={scrollToContact} 
-        />
-      </ScrollReveal>
+      <Footer 
+        onOpenContact={scrollToContact} 
+      />
 
       {/* Modals */}
       {selectedProject && (

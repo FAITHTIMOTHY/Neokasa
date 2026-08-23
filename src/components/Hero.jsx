@@ -39,13 +39,13 @@ export default function Hero({ onOpenContact, onSelectProject }) {
   };
 
   return (
-    <section style={{
+    <section id="home" style={{
       position: 'relative',
-      minHeight: '90vh',
+      minHeight: 'auto',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      padding: '3rem 1.5rem 2rem 1.5rem',
+      padding: '3rem 1.5rem 1.5rem 1.5rem',
       maxWidth: '1400px',
       margin: '0 auto',
       overflow: 'hidden'
