@@ -351,3 +351,59 @@ input[type=range]::-webkit-slider-thumb {
     padding-right: 1rem !important;
   }
 }
+
+/* ==========================================================================
+   Scroll-Driven Dynamic Fade In / Out & Reveal System
+   ========================================================================== */
+.scroll-reveal-container {
+  will-change: opacity, transform;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Fade Up Variant */
+.reveal-fade-up.is-hidden {
+  opacity: 0;
+  transform: translateY(36px);
+  pointer-events: none;
+}
+
+.reveal-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Scale & Fade Variant */
+.reveal-scale.is-hidden {
+  opacity: 0;
+  transform: scale(0.96) translateY(24px);
+  pointer-events: none;
+}
+
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+
+/* Simple Fade In Variant */
+.reveal-fade-in.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.reveal-fade-in.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal-container {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+}
+

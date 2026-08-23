@@ -8,6 +8,7 @@ import AboutFounder from './components/AboutFounder';
 import ContactSection from './components/ContactSection';
 import ContactModal from './components/ContactModal';
 import Footer from './components/Footer';
+import ScrollReveal from './components/ScrollReveal';
 
 export default function App() {
   const [theme, setTheme] = useState('light'); // 'light' | 'dark'
@@ -36,30 +37,42 @@ export default function App() {
       {/* Main Portfolio Sections */}
       <main style={{ flexGrow: 1 }}>
         {/* Fullscreen Hero */}
-        <Hero 
-          onOpenContact={scrollToContact} 
-          onSelectProject={(project) => setSelectedProject(project)}
-        />
+        <ScrollReveal variant="fade-in" threshold={0.05}>
+          <Hero 
+            onOpenContact={scrollToContact} 
+            onSelectProject={(project) => setSelectedProject(project)}
+          />
+        </ScrollReveal>
         
         {/* About Founder & Spatial Leadership (Placed First) */}
-        <AboutFounder onOpenContact={scrollToContact} />
+        <ScrollReveal variant="fade-up" threshold={0.08}>
+          <AboutFounder onOpenContact={scrollToContact} />
+        </ScrollReveal>
 
         {/* Clean Architectural Portfolio Showcase */}
-        <ProjectGrid 
-          onSelectProject={(project) => setSelectedProject(project)} 
-        />
+        <ScrollReveal variant="fade-up" threshold={0.08}>
+          <ProjectGrid 
+            onSelectProject={(project) => setSelectedProject(project)} 
+          />
+        </ScrollReveal>
         
         {/* About Studio, Values & Brand Manifesto */}
-        <StudioPhilosophy />
+        <ScrollReveal variant="fade-up" threshold={0.08}>
+          <StudioPhilosophy />
+        </ScrollReveal>
         
         {/* Simple Contact Form & Global Atelier Addresses */}
-        <ContactSection />
+        <ScrollReveal variant="fade-up" threshold={0.08}>
+          <ContactSection />
+        </ScrollReveal>
       </main>
 
       {/* Footer */}
-      <Footer 
-        onOpenContact={scrollToContact} 
-      />
+      <ScrollReveal variant="fade-in" threshold={0.05}>
+        <Footer 
+          onOpenContact={scrollToContact} 
+        />
+      </ScrollReveal>
 
       {/* Modals */}
       {selectedProject && (
