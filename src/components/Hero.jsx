@@ -57,79 +57,53 @@ export default function Hero({ onOpenContact }) {
         zIndex: 5
       }} className="mobile-grid-1">
         
-        {/* Left Column: Monumental Name, Brand & Vision */}
+        {/* Left Column: Greeting, Bio & Vision */}
         <div style={{ position: 'relative' }}>
-          {/* Subtle Decorative Accent Dots */}
-          <div style={{
-            position: 'absolute',
-            top: '-20px',
-            left: '-15px',
-            color: 'var(--accent-gold)',
-            opacity: 0.5,
-            fontSize: '1.2rem',
-            userSelect: 'none'
-          }}>
-            • &nbsp; + &nbsp; •
-          </div>
-
-          <div style={{
-            fontSize: '0.75rem',
-            fontFamily: 'var(--font-mono)',
-            letterSpacing: '0.25em',
-            color: 'var(--accent-gold)',
-            textTransform: 'uppercase',
-            fontWeight: '700',
-            marginBottom: '1rem'
-          }}>
-            // ARCHITECT & FOUNDER
-          </div>
-
-          {/* Monumental Name Layout (Reference Image) */}
           <h1 style={{
             color: 'var(--text-heading)',
             fontFamily: 'var(--font-display)',
             fontWeight: '900',
-            fontSize: 'clamp(2.75rem, 5.5vw, 5.25rem)',
-            lineHeight: 0.95,
+            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+            lineHeight: 1.05,
             letterSpacing: '-0.01em',
             textTransform: 'uppercase',
-            marginBottom: '1.25rem'
+            marginBottom: '1rem'
           }}>
-            NSIKAKABASI<br />
-            <span style={{ color: 'var(--accent-gold)', fontFamily: 'var(--font-serif)', fontStyle: 'italic', textTransform: 'none', fontWeight: '700' }}>
-              Essien
-            </span>
+            HI! I'M NSIKAKABASI
           </h1>
 
           <div style={{
-            fontFamily: 'var(--font-mono)',
             fontSize: '0.85rem',
-            letterSpacing: '0.18em',
-            color: 'var(--text-muted)',
-            textTransform: 'uppercase',
+            color: 'var(--accent-gold)',
             fontWeight: '700',
-            marginBottom: '1.5rem',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.75rem',
-            flexWrap: 'wrap'
+            fontFamily: 'var(--font-mono)',
+            letterSpacing: '0.14em',
+            textTransform: 'uppercase',
+            marginBottom: '1.5rem'
           }}>
-            <span>ARCHITECT</span>
-            <span style={{ color: 'var(--accent-gold)' }}>•</span>
-            <span>FOUNDER OF NEO KASA</span>
-            <span style={{ color: 'var(--accent-gold)' }}>•</span>
-            <span>BIM & 3D DESIGNER</span>
+            ARCHITECT &amp; FOUNDER OF NEO KASA
           </div>
 
-          <p style={{
+          <div style={{
             color: 'var(--text-secondary)',
-            fontSize: '1.1rem',
-            maxWidth: '580px',
-            marginBottom: '2.5rem',
-            lineHeight: 1.8
+            fontSize: '1.02rem',
+            maxWidth: '620px',
+            lineHeight: 1.85,
+            marginBottom: '2rem',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem'
           }}>
-            Crafting progressive, climate-adaptive spatial works across residential, institutional, and commercial typologies. Rooted in <strong>"Modern Thinking, Timeless Architecture"</strong>.
-          </p>
+            <p style={{ margin: 0 }}>
+              I am <strong>Nsikakabasi Essien</strong>, the creative mind behind <strong>NEO KASA</strong>, an architect with a lifelong passion for design and craft. My work is rooted in creating impactful spatial solutions that benefit humanity and elevate the built environment.
+            </p>
+            <p style={{ margin: 0 }}>
+              I am driven to design experiential spaces—designs that are fiercely rooted in place, full of purpose, and always keep the user at the centre. My portfolio explores the powerful synthesis of modern thinking, climate-adaptive architecture, and technical precision.
+            </p>
+            <p style={{ margin: 0 }}>
+              Using <strong>Autodesk Revit</strong>, <strong>V-Ray</strong>, <strong>3ds Max</strong>, and <strong>Adobe Photoshop</strong> as primary tools, I transform ideas into detailed architectural models and immersive spatial presentations with character and enduring identity.
+            </p>
+          </div>
 
           {/* Pill Shaped Action Buttons (Reference Image) */}
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
