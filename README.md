@@ -7,7 +7,7 @@
 
 ## 🏛️ Overview
 
-**NEO KASA** is the official portfolio and digital monograph for **Nsikakabasi Essien**, an architectural designer and spatial practitioner based in Uyo, Akwa Ibom State, Nigeria. 
+**NEO KASA** is the official portfolio and digital monograph for **Nsikakabasi Essien**, an architectural designer and spatial practitioner based in Akwa Ibom State, Nigeria. 
 
 The studio crafts progressive, climate-adaptive spatial works across institutional, commercial, residential, and sustainable mass-timber typologies—seamlessly uniting tactile raw material purity with precision Building Information Modeling (BIM) and technical CAD working drawings.
 
@@ -149,7 +149,7 @@ This project is pre-configured for Netlify deployment.
 ## 📬 Studio Contact & Commissions
 
 * **Principal Designer**: Nsikakabasi Essien
-* **Studio Headquarters**: Uyo, Akwa Ibom State, Nigeria
+* **Studio Headquarters**: Akwa Ibom State, Nigeria
 * **Direct Email**: [Nsikakabasiessien101@gmail.com](mailto:Nsikakabasiessien101@gmail.com)
 * **WhatsApp / Phone**: [+234 901 371 7660](https://wa.me/2349013717660)
 * **LinkedIn**: [Nsikakabasi Essien](https://www.linkedin.com/in/nsikakabasi-essien-34a293288)

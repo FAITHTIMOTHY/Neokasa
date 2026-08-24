@@ -329,9 +329,9 @@ export default function ContactModal({ isOpen, onClose }) {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.85rem' }}>
                     <div>
                       <div style={{ fontWeight: '700', fontFamily: 'var(--font-display)', color: 'var(--text-heading)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                        <MapPin size={14} color="var(--accent-gold)" /> UYO STUDIO (HEADQUARTERS)
+                        <MapPin size={14} color="var(--accent-gold)" /> STUDIO HEADQUARTERS
                       </div>
-                      <div style={{ color: 'var(--text-secondary)' }}>Uyo, Akwa Ibom State, Nigeria</div>
+                      <div style={{ color: 'var(--text-secondary)' }}>Akwa Ibom State, Nigeria</div>
                     </div>
 
                     <div>

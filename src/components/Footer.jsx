@@ -102,7 +102,7 @@ export default function Footer({ onOpenContact }) {
             © {new Date().getFullYear()} NEO KASA SPATIAL ARCHITECTURE INC. ALL RIGHTS RESERVED.
           </div>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
-            <span style={{ color: 'var(--accent-gold)', fontWeight: '600' }}>UYO, AKWA IBOM, NIGERIA (HQ)</span>
+            <span style={{ color: 'var(--accent-gold)', fontWeight: '600' }}>AKWA IBOM, NIGERIA (HQ)</span>
             <span>•</span>
             <span style={{ color: 'var(--text-secondary)' }}>NATIONWIDE & INTERNATIONAL COMMISSIONS</span>
           </div>

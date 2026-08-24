@@ -222,7 +222,7 @@ export default function Header({
             letterSpacing: '0.15em'
           }}>
             <div>NEO KASA | MONOGRAPH 2025</div>
-            <div>UYO • NIGERIA</div>
+            <div>AKWA IBOM • NIGERIA</div>
           </div>
         </div>
       )}

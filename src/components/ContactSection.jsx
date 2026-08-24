@@ -242,7 +242,7 @@ export default function ContactSection() {
                 </div>
                 <div style={{ color: 'var(--text-heading)', fontWeight: '700', fontSize: '1.05rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                   <MapPin size={16} color="var(--accent-gold)" />
-                  Uyo, Akwa Ibom, Nigeria
+                  Akwa Ibom, Nigeria
                 </div>
               </div>
 
