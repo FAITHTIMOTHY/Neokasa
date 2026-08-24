@@ -8,15 +8,15 @@ import LogoIcon from './LogoIcon';
 
 const founderImages = [
   {
-    src: '/assets/founder/founder_1.jpg?v=2',
+    src: '/assets/founder/founder_1.jpg?v=3',
     caption: 'Nsikakabasi Essien — Creative Lead'
   },
   {
-    src: '/assets/founder/founder_2.jpg?v=2',
-    caption: 'Nsikakabasi Essien — Spatial Architect'
+    src: '/assets/founder/founder_2.jpg?v=3',
+    caption: 'Nsikakabasi Essien — Architect & Spatial Designer'
   },
   {
-    src: '/assets/founder/founder_3.jpg?v=2',
+    src: '/assets/founder/founder_3.jpg?v=3',
     caption: 'Nsikakabasi Essien — Studio Founder'
   }
 ];
