@@ -18,12 +18,12 @@ export default function ProjectGrid({ onSelectProject }) {
   });
 
   const sketchGallery = [
-    { title: "Parametric Facade Shading Study", image: "/assets/fashion_house/fashion_house_material_analysis.jpg", subtitle: "Louver & Screen Geometry" },
-    { title: "UNIUYO Structural Working Blueprint", image: "/assets/uniuyo/uniuyo_working_drawings.png", subtitle: "A101 Section & Atrium Study" },
-    { title: "Azure Terrace CAD Unit Layout", image: "/assets/concepts/azure_terrace_cad_elevations2.jpg", subtitle: "2D Section & Elevation" },
-    { title: "Heritage Duplex Cross-Section", image: "/assets/residences/heritage_duplex_floor_plans.jpg", subtitle: "Floor Plan CAD Drafting" },
-    { title: "Curved Pod Clerestory Study", image: "/assets/fashion_house/fashion_house_elevations.png", subtitle: "Rainwater & Fall Vectors" },
-    { title: "Sculpture & Lawn Sightline Study", image: "/assets/concepts/sculpture_pavilion_residence_lawn.jpg", subtitle: "Outdoor Landscape Concept" }
+    { title: "Fashion House Material Analysis", image: "/assets/fashion_house/fashion_house_material_analysis.jpg", subtitle: "EPDM Membrane & Perforated Pods" },
+    { title: "UNIUYO Structural Working Drawing", image: "/assets/uniuyo/uniuyo_working_drawings.png", subtitle: "A101 Ground Plan & Section BB" },
+    { title: "Azure Terrace CAD Floor Plans", image: "/assets/concepts/azure_terrace_cad_twin_floorplans.jpg", subtitle: "Ground & First Floor Townhouse Layout" },
+    { title: "Grand Portico Duplex Cross-Section", image: "/assets/residences/heritage_duplex_cad_section.jpg", subtitle: "Section A-A Ceiling Heights & Roof Truss" },
+    { title: "Fashion House 4-Facade Elevations", image: "/assets/fashion_house/fashion_house_elevations.png", subtitle: "Approach, Rear, Left & Right CAD" },
+    { title: "Sculptural Monolith Working Drawings", image: "/assets/concepts/sculptural_bungalow_working_drawings.jpg", subtitle: "Bungalow Floor Plan & Elevations" }
   ];
 
   return (

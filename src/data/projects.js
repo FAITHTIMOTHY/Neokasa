@@ -241,20 +241,20 @@ export const PROJECTS = [
     status: "Approved CAD Drawings",
     featured: true,
     isConceptOnly: false,
-    image: "/assets/concepts/azure_terrace_cad_elevations2.jpg",
-    blueprintImage: "/assets/concepts/azure_terrace_unit05.jpg",
+    image: "/assets/concepts/azure_terrace_twin_facade_render.jpg",
+    blueprintImage: "/assets/concepts/azure_terrace_cad_twin_floorplans.jpg",
     materialAnalysisImage: "/assets/concepts/azure_terrace_material_analysis.jpg",
     gallery: [
-      "/assets/concepts/azure_terrace_cad_elevations2.jpg",
-      "/assets/concepts/azure_terrace_cad_elevations1.jpg",
-      "/assets/concepts/azure_terrace_cad_floorplans.jpg",
-      "/assets/concepts/azure_terrace_cad_unit_plan.jpg",
-      "/assets/concepts/azure_terrace_cad_section.jpg",
-      "/assets/concepts/azure_terrace_unit05.jpg",
-      "/assets/concepts/azure_terrace_unit04.jpg",
-      "/assets/concepts/azure_terrace_twin_facade.jpg",
-      "/assets/concepts/azure_terrace_streetview.jpg",
-      "/assets/concepts/azure_terrace_aerial.jpg",
+      "/assets/concepts/azure_terrace_twin_facade_render.jpg",
+      "/assets/concepts/azure_terrace_angled_render.jpg",
+      "/assets/concepts/azure_terrace_unit04_render.jpg",
+      "/assets/concepts/azure_terrace_unit05_render.jpg",
+      "/assets/concepts/azure_terrace_streetview_render.jpg",
+      "/assets/concepts/azure_terrace_cad_twin_floorplans.jpg",
+      "/assets/concepts/azure_terrace_cad_single_floorplans.jpg",
+      "/assets/concepts/azure_terrace_cad_twin_elevations.jpg",
+      "/assets/concepts/azure_terrace_cad_unit05_section.jpg",
+      "/assets/concepts/azure_terrace_cad_master_plan.jpg",
       "/assets/concepts/azure_terrace_material_analysis.jpg"
     ],
     client: "NEO KASA Development Atelier Showcase",
@@ -318,24 +318,34 @@ export const PROJECTS = [
       {
         folder: "01_CAD_Working_Drawings",
         files: [
-          { name: "single_terrace_unit_layout.dwg", type: "dwg", size: "22.4 MB", preview: "/assets/concepts/azure_terrace_unit05.jpg", desc: "Individual townhouse unit floor plan detailing Ground Porch/Living/Dining/Maid's Room & First Floor Bedrooms." },
-          { name: "semi_detached_twin_floor_plans_A101.dwg", type: "dwg", size: "36.5 MB", preview: "/assets/concepts/azure_terrace_unit04.jpg", desc: "Complete ground & first floor working drawings for symmetrical twin terrace blocks." },
-          { name: "twin_elevations_sheet_01.dwg", type: "dwg", size: "28.3 MB", preview: "/assets/concepts/azure_terrace_twin_facade.jpg", desc: "South 1, North 1, West 1, and East 1 CAD architectural elevation sheet." },
-          { name: "twin_elevations_sheet_02_and_section.dwg", type: "dwg", size: "31.8 MB", preview: "/assets/concepts/azure_terrace_streetview.jpg", desc: "Full transverse building cross-section and South 2/North 2/East 2/West 2 CAD elevation sheets." },
-          { name: "estate_master_floor_plans.dwg", type: "dwg", size: "34.1 MB", preview: "/assets/concepts/azure_terrace_aerial.jpg", desc: "Master estate floor plan layout with colored zoning." }
+          { name: "semi_detached_twin_floor_plans_A101.dwg", type: "dwg", size: "36.5 MB", preview: "/assets/concepts/azure_terrace_cad_twin_floorplans.jpg", desc: "Complete ground & first floor working drawings for symmetrical twin terrace blocks." },
+          { name: "single_terrace_unit_layout_A102.dwg", type: "dwg", size: "22.4 MB", preview: "/assets/concepts/azure_terrace_cad_single_floorplans.jpg", desc: "Individual townhouse unit floor plan detailing Ground Porch/Living/Dining/Maid's Room & First Floor Bedrooms." },
+          { name: "twin_elevations_sheet_01_A201.dwg", type: "dwg", size: "28.3 MB", preview: "/assets/concepts/azure_terrace_cad_twin_elevations.jpg", desc: "South 1, North 1, West 1, and East 1 CAD architectural elevation sheet." },
+          { name: "unit05_elevations_and_section_A202.dwg", type: "dwg", size: "31.8 MB", preview: "/assets/concepts/azure_terrace_cad_unit05_section.jpg", desc: "Full transverse building cross-section and South 2/North 2/East 2/West 2 CAD elevation sheets." },
+          { name: "estate_master_floor_plans_A100.dwg", type: "dwg", size: "34.1 MB", preview: "/assets/concepts/azure_terrace_cad_master_plan.jpg", desc: "Master estate floor plan layout with colored zoning." }
+        ]
+      },
+      {
+        folder: "02_3D_BIM_Visualizations",
+        files: [
+          { name: "twin_facade_symmetrical_approach.png", type: "image", size: "28.6 MB", preview: "/assets/concepts/azure_terrace_twin_facade_render.jpg", desc: "Symmetrical front approach render of twin units 01 & 02 with vertical timber louvers and grooved stucco." },
+          { name: "angled_driveway_perspective.png", type: "image", size: "26.4 MB", preview: "/assets/concepts/azure_terrace_angled_render.jpg", desc: "Angled corner perspective showing paved courtyard, parking bay, and cantilever balcony box." },
+          { name: "unit_04_forecourt_perspective.png", type: "image", size: "24.2 MB", preview: "/assets/concepts/azure_terrace_unit04_render.jpg", desc: "Perspective render of Townhouse Unit 04 with entrance gate and vehicle." },
+          { name: "unit_05_single_facade_render.png", type: "image", size: "25.1 MB", preview: "/assets/concepts/azure_terrace_unit05_render.jpg", desc: "Full frontal facade render of standalone Townhouse Unit 05." },
+          { name: "estate_master_streetview_render.png", type: "image", size: "29.8 MB", preview: "/assets/concepts/azure_terrace_streetview_render.jpg", desc: "Full panoramic streetview of all 5 townhouses with boundary wall and streetscape." }
         ]
       }
     ],
     floorPlanPins: [
-      { id: 1, x: 28, y: 60, title: "Ground Floor Living Room & Ante Room", desc: "Spacious ground floor living room with ante room, guest WC, and front porch.", image: "/assets/concepts/azure_terrace_cad_elevations2.jpg" },
-      { id: 2, x: 72, y: 65, title: "First Floor Master Bedroom & Outdoor Balcony", desc: "Master suite with private balcony framed by white cantilever box and oak timber louvers.", image: "/assets/concepts/azure_terrace_cad_floorplans.jpg" },
-      { id: 3, x: 50, y: 55, title: "Upper Level Family Lounge & Terrace", desc: "Central family lounge connecting upper floor bedrooms with shaded timber screen.", image: "/assets/concepts/azure_terrace_cad_elevations1.jpg" },
-      { id: 4, x: 75, y: 30, title: "Townhouse Unit 05 Facade & Forecourt", desc: "Single townhouse unit facade with front garden, parking bay, and clean entrance.", image: "/assets/concepts/azure_terrace_cad_unit_plan.jpg" },
-      { id: 5, x: 50, y: 20, title: "Estate Courtyard & Full Facade Streetview", desc: "Full estate view of all 5 townhouse units with palm landscaping and paved access.", image: "/assets/concepts/azure_terrace_cad_section.jpg" }
+      { id: 1, x: 28, y: 60, title: "Ground Floor Living Room & Ante Room", desc: "Spacious ground floor living room with ante room, guest WC, and front porch.", image: "/assets/concepts/azure_terrace_twin_facade_render.jpg" },
+      { id: 2, x: 72, y: 65, title: "First Floor Master Bedroom & Outdoor Balcony", desc: "Master suite with private balcony framed by white cantilever box and oak timber louvers.", image: "/assets/concepts/azure_terrace_angled_render.jpg" },
+      { id: 3, x: 50, y: 55, title: "Townhouse Unit 04 Facade & Forecourt", desc: "Perspective render of Townhouse Unit 04 with paved forecourt and vehicle parking.", image: "/assets/concepts/azure_terrace_unit04_render.jpg" },
+      { id: 4, x: 75, y: 30, title: "Townhouse Unit 05 Facade & Forecourt", desc: "Single townhouse unit facade with front garden, parking bay, and clean entrance.", image: "/assets/concepts/azure_terrace_unit05_render.jpg" },
+      { id: 5, x: 50, y: 20, title: "Estate Courtyard & Full Facade Streetview", desc: "Full estate view of all 5 townhouse units with palm landscaping and paved access.", image: "/assets/concepts/azure_terrace_streetview_render.jpg" }
     ],
     beforeAfter: {
-      render: "/assets/concepts/azure_terrace_unit04.jpg",
-      built: "/assets/concepts/azure_terrace_cad_elevations2.jpg",
+      render: "/assets/concepts/azure_terrace_cad_twin_floorplans.jpg",
+      built: "/assets/concepts/azure_terrace_twin_facade_render.jpg",
       renderLabel: "CAD Estate Floor Plans",
       builtLabel: "3D Modern Building Facade"
     }
@@ -574,11 +584,13 @@ export const PROJECTS = [
     featured: true,
     isConceptOnly: true,
     image: "/assets/concepts/sculptural_bungalow_front.jpg",
+    blueprintImage: "/assets/concepts/sculptural_bungalow_working_drawings.jpg",
     materialAnalysisImage: "/assets/concepts/sculptural_bungalow_material_analysis.jpg",
     gallery: [
       "/assets/concepts/sculptural_bungalow_front.jpg",
       "/assets/concepts/sculptural_bungalow_blossoms.jpg",
       "/assets/concepts/sculptural_bungalow_angled.jpg",
+      "/assets/concepts/sculptural_bungalow_working_drawings.jpg",
       "/assets/concepts/sculptural_bungalow_material_analysis.jpg"
     ],
     client: "NEO KASA Architectural Studio",
@@ -636,7 +648,7 @@ export const PROJECTS = [
       {
         folder: "01_CAD_Working_Drawings",
         files: [
-          { name: "bungalow_floor_plan_and_elevations_A101.dwg", type: "dwg", size: "28.4 MB", preview: "/assets/concepts/azure_terrace_unit05_close.jpg", desc: "Complete CAD working drawings detailing floor plan layout, Approach View elevation, and Rear View." }
+          { name: "bungalow_floor_plan_and_elevations_A101.dwg", type: "dwg", size: "28.4 MB", preview: "/assets/concepts/sculptural_bungalow_working_drawings.jpg", desc: "Complete CAD working drawings detailing 3-bedroom floor plan layout, Approach View elevation, and Rear View." }
         ]
       }
     ],
@@ -648,7 +660,7 @@ export const PROJECTS = [
       { id: 5, x: 28, y: 45, title: "Bedrooms 1 & 2 Wing", desc: "Private residential wing comprising 2 additional bedrooms with shared en-suite facilities.", image: "/assets/concepts/sculptural_bungalow_angled.jpg" }
     ],
     beforeAfter: {
-      render: "/assets/concepts/azure_terrace_unit05_close.jpg",
+      render: "/assets/concepts/sculptural_bungalow_working_drawings.jpg",
       built: "/assets/concepts/sculptural_bungalow_front.jpg",
       renderLabel: "CAD Working Drawings (Floor Plan & Elevations)",
       builtLabel: "3D BIM Facade Render"

@@ -18,11 +18,12 @@ export default function FloorPlanHotspots({ project }) {
 
     if (project.id === "neokasa-azure-terrace-residences") {
       return [
-        { label: "Unit Layout Plan", img: "/assets/concepts/azure_terrace_unit05.jpg" },
-        { label: "Twin Estate Plan", img: "/assets/concepts/azure_terrace_unit04.jpg" },
-        { label: "Elevations Sheet 1", img: "/assets/concepts/azure_terrace_twin_facade.jpg" },
-        { label: "Elevations & Section", img: "/assets/concepts/azure_terrace_streetview.jpg" },
-        { label: "Colored Estate Plan", img: "/assets/concepts/azure_terrace_aerial.jpg" }
+        { label: "Twin Floor Plans", img: "/assets/concepts/azure_terrace_cad_twin_floorplans.jpg" },
+        { label: "Single Unit 05 Plan", img: "/assets/concepts/azure_terrace_cad_single_floorplans.jpg" },
+        { label: "Twin Elevations (Sheet 1)", img: "/assets/concepts/azure_terrace_cad_twin_elevations.jpg" },
+        { label: "Unit 05 Elevations & Section", img: "/assets/concepts/azure_terrace_cad_unit05_section.jpg" },
+        { label: "Master Colored Plan", img: "/assets/concepts/azure_terrace_cad_master_plan.jpg" },
+        { label: "Material Analysis Board", img: "/assets/concepts/azure_terrace_material_analysis.jpg" }
       ];
     }
     
