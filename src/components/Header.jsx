@@ -14,7 +14,6 @@ export default function Header({
   };
 
   const navLinks = [
-    { label: "About Founder", href: "#founder" },
     { label: "Portfolio", href: "#projects" },
     { label: "About Studio", href: "#philosophy" },
     { label: "Contact", href: "#contact" },
@@ -22,10 +21,9 @@ export default function Header({
 
   const editorialMenu = [
     { num: "(1)", label: "HOME", href: "#", align: "left" },
-    { num: "(2)", label: "ABOUT", href: "#founder", align: "right" },
-    { num: "(3)", label: "WORKS", href: "#projects", align: "left" },
-    { num: "(4)", label: "STUDIO", href: "#philosophy", align: "right" },
-    { num: "(5)", label: "CONTACT", href: "#contact", align: "left" }
+    { num: "(2)", label: "WORKS", href: "#projects", align: "right" },
+    { num: "(3)", label: "STUDIO", href: "#philosophy", align: "left" },
+    { num: "(4)", label: "CONTACT", href: "#contact", align: "right" }
   ];
 
   const handleEditorialNav = (href) => {

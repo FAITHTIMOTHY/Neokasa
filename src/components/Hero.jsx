@@ -134,7 +134,7 @@ export default function Hero({ onOpenContact }) {
             </button>
 
             <a
-              href="#founder"
+              href="#projects"
               style={{
                 background: 'transparent',
                 color: 'var(--text-heading)',
@@ -155,11 +155,11 @@ export default function Hero({ onOpenContact }) {
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-gold)'; e.currentTarget.style.color = 'var(--accent-gold)'; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-strong)'; e.currentTarget.style.color = 'var(--text-heading)'; }}
             >
-              ABOUT ME <ArrowDown size={14} />
+              EXPLORE WORKS <ArrowDown size={14} />
             </a>
 
             <a
-              href="#projects"
+              href="#philosophy"
               style={{
                 color: 'var(--text-muted)',
                 fontFamily: 'var(--font-mono)',
@@ -170,7 +170,7 @@ export default function Hero({ onOpenContact }) {
                 fontWeight: '600'
               }}
             >
-              SELECTED WORKS
+              STUDIO PHILOSOPHY
             </a>
           </div>
         </div>

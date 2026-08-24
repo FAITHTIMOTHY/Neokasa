@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import ProjectGrid from './components/ProjectGrid';
 import ProjectModal from './components/ProjectModal';
 import StudioPhilosophy from './components/StudioPhilosophy';
-import AboutFounder from './components/AboutFounder';
 import ContactSection from './components/ContactSection';
 import ContactModal from './components/ContactModal';
 import Footer from './components/Footer';
@@ -42,9 +41,6 @@ export default function App() {
           onSelectProject={(project) => setSelectedProject(project)}
         />
         
-        {/* About Founder & Spatial Leadership (Placed First) */}
-        <AboutFounder onOpenContact={scrollToContact} />
-
         {/* Clean Architectural Portfolio Showcase */}
         <ProjectGrid 
           onSelectProject={(project) => setSelectedProject(project)} 
